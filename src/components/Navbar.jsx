@@ -83,7 +83,7 @@ const Navbar = () => {
                                             <p className="py-4 font-semibold">Email: <span className='font-normal'>{currentUser.email} </span> </p>
                                             <div className='flex flex-row gap-4'>
                                                 <button onClick={() => logout()} className='btn rounded-xl'>Logout</button>
-                                                <button className='btn rounded-xl'>Go to Writer</button>
+                                                <button onClick={() => navigate('dashboard')} className='btn rounded-xl'>Go to Writer</button>
                                             </div>
                                         </div>
                                     </div>
