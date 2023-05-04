@@ -11,7 +11,6 @@ const Navbar = () => {
         if (user) {
             setShowModal(!showModal);
         } else {
-            // Redirect to login page
             () => { navigate('/login') }
         }
     }
