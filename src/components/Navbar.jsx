@@ -1,23 +1,14 @@
-import { useContext, useEffect, useState } from 'react'
+import { useContext, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../utills/AuthContext';
 const Navbar = () => {
-    const [theme, setTheme] = useState('business')
     const [showModal, setShowModal] = useState(false)
-    const { currentUser, logout, user } = useContext(AuthContext)
+    const { currentUser, logout, user, toggleTheme } = useContext(AuthContext)
     const navigate = useNavigate()
-    useEffect(() => {
-        const htmlElement = document.querySelector('html');
-        if (htmlElement) {
-            htmlElement.setAttribute('data-theme', theme);
-        }
-    }, [theme])
-    const toggleTheme = () => {
-        setTheme(theme === 'business' ? 'valentine' : 'business')
-    }
+    const firstTwoLetters = currentUser ? currentUser.displayName.slice(0, 2) : '';
+
     const handleModal = () => {
         if (user) {
-            // setShowModal(false)
             setShowModal(!showModal);
         } else {
             // Redirect to login page
@@ -41,7 +32,7 @@ const Navbar = () => {
                     </div>
                 </div>
                 <div className="navbar-center">
-                    <Link to='/' className="btn btn-ghost normal-case text-xl">Digiwriterv2</Link>
+                    <button onClick={() => navigate('/')} className="btn btn-ghost normal-case text-xl">Digiwriterv2</button >
                 </div>
                 <div className="navbar-end">
                     <label className="swap swap-rotate">
@@ -53,14 +44,16 @@ const Navbar = () => {
                         <svg className="swap-off fill-current w-7 h-7" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21.64,13a1,1,0,0,0-1.05-.14,8.05,8.05,0,0,1-3.37.73A8.15,8.15,0,0,1,9.08,5.49a8.59,8.59,0,0,1,.25-2A1,1,0,0,0,8,2.36,10.14,10.14,0,1,0,22,14.05,1,1,0,0,0,21.64,13Zm-9.5,6.69A8.14,8.14,0,0,1,7.08,5.22v.27A10.15,10.15,0,0,0,17.22,15.63a9.79,9.79,0,0,0,2.1-.22A8.11,8.11,0,0,1,12.14,19.73Z" /></svg>
 
                     </label>
-                    <div className=' border h-9 ml-2 bg-gradient-to-t border-purple-400 '></div>
+                    <div className=' border h-9 ml-2 bg-gradient-to-t border-base-content shadow-2xl' ></div>
                     <div className="flex items-center">
                         {/* The button to open modal */}
                         {user ? (
-                            <button htmlFor="my-modal-3" className="btn btn-ghost btn-circle" onClick={handleModal}>
-                                <svg aria-hidden="true" width={31} height={40} fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z" strokeLinecap="round" strokeLinejoin="round"></path>
-                                </svg>
+                            <button htmlFor="my-modal-3" className="btn btn-ghost ml-1 btn-circle" onClick={handleModal}>
+                                <div className="avatar online placeholder">
+                                    <div className="bg-neutral-focus border-2 border-base-content  text-neutral-content rounded-full w-9">
+                                        <span className="text-xl">{firstTwoLetters}</span>
+                                    </div>
+                                </div>
                             </button>
                         ) : (
                             <Link to='/login' className="btn btn-ghost btn-circle">
@@ -83,7 +76,7 @@ const Navbar = () => {
                                             <p className="py-4 font-semibold">Email: <span className='font-normal'>{currentUser.email} </span> </p>
                                             <div className='flex flex-row gap-4'>
                                                 <button onClick={() => logout()} className='btn rounded-xl'>Logout</button>
-                                                <button onClick={() => navigate('dashboard')} className='btn rounded-xl'>Go to Writer</button>
+                                                <button onClick={() => navigate('/dashboard/welcome')} className='btn rounded-xl'>Dashboard</button>
                                             </div>
                                         </div>
                                     </div>
@@ -94,7 +87,7 @@ const Navbar = () => {
                         }
                     </div>
                 </div>
-            </div>
+            </div >
         </>
     )
 }

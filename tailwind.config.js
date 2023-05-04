@@ -6,14 +6,26 @@ export default {
       fontFamily: {
         poppins: ["Poppins", "sans-serif"],
       },
-      ".spline-container": {
-        opacity: 0,
-        transition: "opacity 1s ease-in-out",
-      },
-      ".spline-loaded .spline-container": {
-        opacity: 1,
-      },
     },
+  },
+  daisyui: {
+    themes: [
+      "valentine",
+      "business",
+      {
+        mytheme: {
+          primary: "#52cebb",
+          secondary: "#db7d02",
+          accent: "#d637a4",
+          neutral: "#221F37",
+          "base-100": "#3B3B3B",
+          info: "#54A8F2",
+          success: "#76E0C0",
+          warning: "#F2BE21",
+          error: "#F50A49",
+        },
+      },
+    ],
   },
   plugins: [require("daisyui")],
 };

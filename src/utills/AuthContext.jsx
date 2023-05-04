@@ -1,13 +1,26 @@
+/* eslint-disable react/prop-types */
 import { createContext, useState, useEffect } from 'react';
 import { auth } from '../utills/firebase';
 
 export const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
+
   const [currentUser, setCurrentUser] = useState(null);
   const [loading, setLoading] = useState(true);
   const [user, setuser] = useState(false);
+  const [theme, setTheme] = useState(localStorage.getItem('theme') || 'business');
 
+  useEffect(() => {
+    const htmlElement = document.querySelector('html');
+    if (htmlElement) {
+      htmlElement.setAttribute('data-theme', theme);
+      localStorage.setItem('theme', theme)
+    }
+  }, [theme])
+  const toggleTheme = () => {
+    setTheme(theme === 'business' ? 'valentine' : 'business')
+  }
   const signup = (email, password) => {
     return auth.createUserWithEmailAndPassword(email, password);
   };
@@ -64,6 +77,7 @@ export const AuthProvider = ({ children }) => {
     resetPassword,
     updateEmail,
     updatePassword,
+    toggleTheme,
   };
 
   return (
