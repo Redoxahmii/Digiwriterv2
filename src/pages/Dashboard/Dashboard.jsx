@@ -1,7 +1,6 @@
 import { Link, Outlet } from "react-router-dom";
 import { useState } from "react";
 import TextEditor from "../../utills/TextEditor";
-
 const Dashboard = () => {
     const [showEditor, setShowEditor] = useState(true);
 
