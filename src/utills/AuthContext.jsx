@@ -9,7 +9,6 @@ export const AuthProvider = ({ children }) => {
   const [currentUser, setCurrentUser] = useState(null);
   const [loading, setLoading] = useState(true);
   const [user, setuser] = useState(false);
-  // const [signupComplete, setSignupComplete] = useState(false); // Add a state variable for signup completion
   const [showModal, setShowModal] = useState(false)
 
 
@@ -63,7 +62,7 @@ export const AuthProvider = ({ children }) => {
         setuser(true);
       }
       else {
-        setuser(false)
+        setuser(false);
       }
     });
     return unsubscribe;
@@ -72,7 +71,6 @@ export const AuthProvider = ({ children }) => {
   const value = {
     currentUser,
     user,
-    setuser,
     signup,
     login,
     logout,
@@ -81,8 +79,6 @@ export const AuthProvider = ({ children }) => {
     updateEmail,
     updatePassword,
     toggleTheme,
-    // signupComplete,
-    // setSignupComplete,
     showModal,
     setShowModal,
   };

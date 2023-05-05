@@ -5,7 +5,7 @@ import { auth } from "../utills/firebase";
 import { useContext, useState } from "react";
 import { AuthContext } from "../utills/AuthContext";
 const Signup = () => {
-    const { logout, setSignupComplete, setShowModal } = useContext(AuthContext)
+    const { logout, setShowModal } = useContext(AuthContext)
     const navigate = useNavigate();
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
@@ -19,7 +19,6 @@ const Signup = () => {
         }
         setsubmitButtonDisabled(true);
         seterrorMsg("");
-        // setSignupComplete(true)
         createUserWithEmailAndPassword(auth, email, password).then(async (res) => {
             setShowModal(false)
             setsubmitButtonDisabled(false);
@@ -30,7 +29,6 @@ const Signup = () => {
             });
             logout();
             seterrorMsg("Verification Email Sent");
-            // setuser(null);
             setTimeout(() => {
                 () => navigate('/')
             }, 2000);

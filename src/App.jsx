@@ -1,4 +1,4 @@
-import { Route, Routes, Navigate } from 'react-router-dom'
+import { Route, Routes } from 'react-router-dom'
 import Home from './pages/Home'
 import Login from './pages/Login'
 import Navbar from './components/Navbar'
@@ -7,19 +7,10 @@ import Dashboard from './pages/Dashboard/Dashboard'
 import Welcome from './pages/Dashboard/Welcome'
 import { useContext } from 'react'
 import { AuthContext } from './utills/AuthContext'
-
+import Protected from './utills/Protected'
 // eslint-disable-next-line react/prop-types
-const PrivateRoute = ({ element, ...rest }) => {
-  const { user } = useContext(AuthContext);
-
-  return user ? (
-    <Route {...rest} element={element} />
-  ) : (
-    <Navigate to="/login" replace />
-  );
-};
-
 const App = () => {
+  const { user } = useContext(AuthContext)
   return (
     <>
       <Navbar />
@@ -27,24 +18,15 @@ const App = () => {
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
-        <Route path="/dashboard/*" element={<PrivateRoutes />} />
+        <Route path="/dashboard/*" element={<Protected user={user}> <Dashboard /> </Protected>} >
+          <Route path='welcome' element={<Welcome></Welcome>}></Route>
+          <Route path='signup' element={<Signup />}></Route>
+        </Route>
       </Routes>
     </>
   )
 }
 
-const PrivateRoutes = () => {
-  const { user } = useContext(AuthContext);
-  console.log(user)
 
-  return user ? (
-    <Dashboard>
-      <PrivateRoute path="/welcome" element={<Welcome />} />
-      <PrivateRoute path="/signup" element={<Signup />} />
-    </Dashboard>
-  ) : (
-    <Navigate to="/login" replace />
-  );
-};
 
 export default App
