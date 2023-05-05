@@ -9,6 +9,10 @@ export const AuthProvider = ({ children }) => {
   const [currentUser, setCurrentUser] = useState(null);
   const [loading, setLoading] = useState(true);
   const [user, setuser] = useState(false);
+  // const [signupComplete, setSignupComplete] = useState(false); // Add a state variable for signup completion
+  const [showModal, setShowModal] = useState(false)
+
+
   const [theme, setTheme] = useState(localStorage.getItem('theme') || 'business');
 
   useEffect(() => {
@@ -49,9 +53,7 @@ export const AuthProvider = ({ children }) => {
     const unsubscribe = auth.onAuthStateChanged((user) => {
       setCurrentUser(user);
       setLoading(false);
-      // setuser(true);
     });
-
     return unsubscribe;
   }, []);
 
@@ -64,20 +66,25 @@ export const AuthProvider = ({ children }) => {
         setuser(false)
       }
     });
-
     return unsubscribe;
   }, []);
 
   const value = {
     currentUser,
     user,
+    setuser,
     signup,
     login,
     logout,
+    loading,
     resetPassword,
     updateEmail,
     updatePassword,
     toggleTheme,
+    // signupComplete,
+    // setSignupComplete,
+    showModal,
+    setShowModal,
   };
 
   return (

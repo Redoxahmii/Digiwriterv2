@@ -2,8 +2,10 @@ import { createUserWithEmailAndPassword, sendEmailVerification, updateProfile } 
 import { Fade } from "react-awesome-reveal"
 import { Link, useNavigate } from "react-router-dom"
 import { auth } from "../utills/firebase";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { AuthContext } from "../utills/AuthContext";
 const Signup = () => {
+    const { logout, setSignupComplete, setShowModal } = useContext(AuthContext)
     const navigate = useNavigate();
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
@@ -17,17 +19,21 @@ const Signup = () => {
         }
         setsubmitButtonDisabled(true);
         seterrorMsg("");
+        setSignupComplete(true)
         createUserWithEmailAndPassword(auth, email, password).then(async (res) => {
+            setShowModal(false)
             setsubmitButtonDisabled(false);
             const user = res.user;
             await sendEmailVerification(res.user);
             await updateProfile(user, {
                 displayName: name,
             });
-            setTimeout(() => {
-                navigate('/')
-            }, 3000);
+            logout();
             seterrorMsg("Verification Email Sent");
+            // setuser(null);
+            setTimeout(() => {
+                () => navigate('/')
+            }, 2000);
         }).catch((err) => {
             setsubmitButtonDisabled(false);
             seterrorMsg("Error: " + err.message);
@@ -50,10 +56,10 @@ const Signup = () => {
                         </svg>
 
                         Sign up</button>
-                    <div>
-                        <b className="text-error">{errorMsg}</b>
+                    <div className="text-center pt-1">
+                        <b className="text-error ">{errorMsg}</b>
                     </div>
-                    <p className='pt-5 text-center'>Have an account? <Link className='text-primary-content' to='/login'>Login</Link></p>
+                    <p className='pt-3 text-center'>Have an account? <Link className='text-primary-content' to='/login'>Login</Link></p>
                 </Fade>
             </div>
         </div>

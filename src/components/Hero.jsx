@@ -1,12 +1,15 @@
-import { lazy } from "react";
+import { useContext } from "react";
 import { Fade } from "react-awesome-reveal";
 import { useNavigate } from "react-router-dom";
 import Footer from "./Footer";
-const Spline = lazy(() => import('@splinetool/react-spline'));
+import Spline from "@splinetool/react-spline";
+import { AuthContext } from "../utills/AuthContext";
+// const Spline = lazy(() => import('@splinetool/react-spline'));]
 const Hero = () => {
+    const { logout } = useContext(AuthContext)
     const navigate = useNavigate();
     return (
-        <div >
+        <div>
             <div className="hero min-h-screen bg-base-200 font-poppins">
                 <div className="hero-content flex-col lg:flex-row-reverse ">
                     <Fade direction="left" duration={1000} delay={3000} triggerOnce >
@@ -32,8 +35,6 @@ const Hero = () => {
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6">
                                     <path strokeLinecap="round" strokeLinejoin="round" d="M11.25 4.5l7.5 7.5-7.5 7.5m-6-15l7.5 7.5-7.5 7.5" />
                                 </svg>
-
-
                             </button>
                         </Fade>
                     </div>

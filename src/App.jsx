@@ -35,6 +35,7 @@ const App = () => {
 
 const PrivateRoutes = () => {
   const { user } = useContext(AuthContext);
+  console.log(user)
 
   return user ? (
     <Dashboard>
