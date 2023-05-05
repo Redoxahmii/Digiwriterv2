@@ -19,7 +19,7 @@ const Signup = () => {
         }
         setsubmitButtonDisabled(true);
         seterrorMsg("");
-        setSignupComplete(true)
+        // setSignupComplete(true)
         createUserWithEmailAndPassword(auth, email, password).then(async (res) => {
             setShowModal(false)
             setsubmitButtonDisabled(false);

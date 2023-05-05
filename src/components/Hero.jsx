@@ -1,12 +1,9 @@
-import { useContext } from "react";
 import { Fade } from "react-awesome-reveal";
 import { useNavigate } from "react-router-dom";
 import Footer from "./Footer";
 import Spline from "@splinetool/react-spline";
-import { AuthContext } from "../utills/AuthContext";
 // const Spline = lazy(() => import('@splinetool/react-spline'));]
 const Hero = () => {
-    const { logout } = useContext(AuthContext)
     const navigate = useNavigate();
     return (
         <div>
