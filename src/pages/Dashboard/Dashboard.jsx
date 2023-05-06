@@ -1,8 +1,12 @@
 import { Link, Outlet } from "react-router-dom";
 import { useState } from "react";
-import TextEditor from "../../utills/TextEditor";
+import { CKEditor } from "@ckeditor/ckeditor5-react";
+import { GrammarlyEditorPlugin } from "@grammarly/editor-sdk-react";
+import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+
 const Dashboard = () => {
     const [showEditor, setShowEditor] = useState(true);
+    const [editorContent, setEditorContent] = useState('<p>Hello from CKEditor 5!</p>');
 
     const handleEditorClose = () => {
         setShowEditor(false);
@@ -10,6 +14,11 @@ const Dashboard = () => {
 
     const handleEditorOpen = () => {
         setShowEditor(true);
+    };
+
+    const handleEditorChange = (event, editor) => {
+        const data = editor.getData();
+        setEditorContent(data);
     };
 
     return (
@@ -41,7 +50,22 @@ const Dashboard = () => {
 
                     {showEditor ? (
                         <>
-                            <TextEditor />
+                            <div className='text-black'>
+                                <GrammarlyEditorPlugin
+                                    clientId='client_Gvi7n3wdBfgA2jqFMU5Kib'
+                                    config={{
+                                        documentDialect: "british",
+                                        autocomplete: "on"
+                                    }}
+                                >
+                                    <CKEditor
+                                        editor={ClassicEditor}
+                                        data={editorContent}
+                                        onChange={handleEditorChange}
+                                    />
+                                </GrammarlyEditorPlugin>
+
+                            </div>
                             <button className="btn mt-10 btn-primary rounded-xl" onClick={handleEditorClose}>Close Editor</button>
                         </>
                     ) : (
