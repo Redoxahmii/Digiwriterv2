@@ -6,7 +6,7 @@ import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 
 const Dashboard = () => {
     const [showEditor, setShowEditor] = useState(true);
-    const [editorContent, setEditorContent] = useState('<p>Hello from CKEditor 5!</p>');
+    const [editorContent, setEditorContent] = useState('');
 
     const handleEditorClose = () => {
         setShowEditor(false);
@@ -23,7 +23,7 @@ const Dashboard = () => {
 
     return (
         <>
-            <div className="flex flex-col h-[91vh]">
+            <div className="flex flex-col h-[93vh]">
                 <div className="drawer drawer-mobile">
                     <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
                     <div className="drawer-content">
@@ -46,16 +46,15 @@ const Dashboard = () => {
                         </div>
                     </div>
                 </div>
-                <div className="w-full flex-1 p-2 items-center justify-center rounded-xl">
-
-                    {showEditor ? (
-                        <>
+                <div className="w-full flex-1 p-2 items-center justify-center rounded-xl flex flex-col">
+                    <div className="flex justify-center w-full">
+                        {showEditor ? (
                             <div className='text-black'>
                                 <GrammarlyEditorPlugin
                                     clientId='client_Gvi7n3wdBfgA2jqFMU5Kib'
                                     config={{
-                                        documentDialect: "british",
-                                        autocomplete: "on"
+                                        documentDialect: "american",
+                                        autocomplete: "on",
                                     }}
                                 >
                                     <CKEditor
@@ -64,13 +63,27 @@ const Dashboard = () => {
                                         onChange={handleEditorChange}
                                     />
                                 </GrammarlyEditorPlugin>
-
                             </div>
-                            <button className="btn mt-10 btn-primary rounded-xl" onClick={handleEditorClose}>Close Editor</button>
-                        </>
-                    ) : (
-                        <button className="btn btn-primary rounded-xl" onClick={handleEditorOpen}>Open Editor</button>
-                    )}
+                        ) : null}
+                    </div>
+                    <div className="flex justify-center">
+                        {showEditor ? (
+                            <div className="flex flex-col items-center mt-5">
+                                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                                </svg>
+
+                                <button className="btn btn-ghost rounded-xl" onClick={handleEditorClose}>Close Editor</button>
+                            </div>
+                        ) : (
+                            <div className="flex flex-col items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 15l7-7 7 7" />
+                                </svg>
+                                <button className="btn btn-ghost rounded-xl" onClick={handleEditorOpen}>Open Editor</button>
+                            </div>
+                        )}
+                    </div>
                 </div>
             </div>
         </>

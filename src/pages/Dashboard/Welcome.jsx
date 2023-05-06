@@ -1,5 +1,6 @@
-
+import { useNavigate } from "react-router-dom"
 const Welcome = () => {
+    const navigate = useNavigate()
     return (
         <div className="bg-base-200 w-[90vw] sm:w-full flex-col font-poppins h-[90vh]  flex justify-center items-center">
             {/* <h1 className="text-5xl font-semibold">Welcome to Dashboard</h1> */}
@@ -8,9 +9,9 @@ const Welcome = () => {
                     <h2 className="text-xl font-semibold">Welcome to Dashboard</h2>
                     <p className="">Time to get started!</p>
                 </div>
-                <figure><img src="https://images.unsplash.com/photo-1636690498207-d7b393423b9a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="Shoes" /></figure>
+                <figure><img src="/dash.jpg" alt="temp" /></figure>
             </div>
-            <button className="btn btn-primary rounded-xl mt-10">Get Started</button>
+            <button onClick={() => navigate('/dashboard/signup')} className="btn btn-primary rounded-xl mt-10">Get Started</button>
         </div>
     )
 }
