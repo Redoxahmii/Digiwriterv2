@@ -74,8 +74,8 @@ const Navbar = () => {
                                         <label htmlFor="my-modal-3" className="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
                                         <h3 className="text-lg font-bold text-center">Profile</h3>
                                         <div className='flex justify-center items-center flex-col'>
-                                            <p className="pt-4 font-semibold">Name: <span className='font-normal'> {currentUser.displayName}</span> </p>
-                                            <p className="py-4 font-semibold">Email: <span className='font-normal'>{currentUser.email} </span> </p>
+                                            <p className="pt-4 font-semibold">Name:&nbsp; <span className='font-normal text-primary-content'>{currentUser.displayName}</span> </p>
+                                            <p className="py-4 font-semibold">Email:&nbsp; <span className='font-normal text-primary-content'>{currentUser.email} </span> </p>
                                             <div className='flex flex-row gap-4'>
                                                 <button onClick={() => logout()} className='btn rounded-xl'>Logout</button>
                                                 <button onClick={() => navigate('/dashboard/welcome')} className='btn rounded-xl'>Dashboard</button>

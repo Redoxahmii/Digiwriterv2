@@ -10,7 +10,7 @@ const Hero = () => {
             <div className="hero min-h-screen bg-base-200 font-poppins">
                 <div className="hero-content flex-col lg:flex-row-reverse ">
                     <Fade direction="left" duration={1000} delay={3000} triggerOnce >
-                        <div className="hidden lg:block lg:ml-40">
+                        <div className="hidden md:block lg:ml-40">
                             <Spline scene='https://prod.spline.design/c40-agQ8miWxMpPP/scene.splinecode' className="lg:ml-30 max-w-sm" />
                         </div>
                     </Fade>
