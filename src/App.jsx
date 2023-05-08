@@ -9,6 +9,7 @@ import { useContext } from 'react'
 import { AuthContext } from './utills/AuthContext'
 import Protected from './utills/Protected'
 import Error from './pages/Error'
+import Article from './pages/Dashboard/Article'
 // eslint-disable-next-line react/prop-types
 const App = () => {
   const { user } = useContext(AuthContext)
@@ -23,6 +24,7 @@ const App = () => {
         <Route path="/dashboard/*" element={<Protected user={user}> <Dashboard /> </Protected>} >
           <Route path='welcome' element={<Welcome></Welcome>}></Route>
           <Route path='signup' element={<Signup />}></Route>
+          <Route path='article' element={<Article />}></Route>
         </Route>
       </Routes>
     </div>

@@ -10,7 +10,7 @@ const Hero = () => {
         <div>
             <div className="hero min-h-screen bg-base-200 ">
                 <div className="hero-content flex-col lg:flex-row-reverse ">
-                    <Fade direction="left" duration={1000} delay={3000} triggerOnce >
+                    <Fade direction="left" duration={1000} delay={3500} triggerOnce >
                         <div className="hidden md:block lg:ml-40">
                             <Suspense fallback={<><div className="radial-progress" style={{ "--value": "70", "--size": "12rem", "--thickness": "2px" }}>70%</div><div className="radial-progress" style={{ "--value": "70", "--size": "12rem", "--thickness": "2rem" }}>70%</div></>}>
                                 <Spline scene='https://prod.spline.design/c40-agQ8miWxMpPP/scene.splinecode' className="lg:ml-30 max-w-sm" />

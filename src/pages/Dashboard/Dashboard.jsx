@@ -29,7 +29,7 @@ const Dashboard = () => {
                     <div className="drawer-content">
                         <Outlet />
                     </div>
-                    <div className="drawer-side w-40 bg-blue-200 h-[90vh]">
+                    <div className="drawer-side w-44 bg-blue-200 h-[90vh]">
                         <div className=" shadow-2xl bg-base-300">
                             <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
                             <ul className="menu p-4 w-60 bg-base-300 text-base-content">
@@ -37,11 +37,11 @@ const Dashboard = () => {
                                     <Link to="/dashboard/welcome">Welcome</Link>
                                 </li>
                                 <li>
-                                    <Link to="/dashboard/signup">signup</Link>
+                                    <Link to="/dashboard/article">Article</Link>
                                 </li>
-                                <li>
+                                {/* <li>
                                     <a>Sidebar Item 2</a>
-                                </li>
+                                </li> */}
                             </ul>
                         </div>
                     </div>
