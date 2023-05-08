@@ -21,7 +21,7 @@ const Navbar = () => {
 
     return (
         <>
-            <div className="navbar bg-base-100 rounded-3xl font-poppins z-50">
+            <div className="navbar bg-base-100 rounded-3xl z-50">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <label tabIndex={0} className="btn btn-ghost btn-circle">

@@ -32,14 +32,14 @@ const Login = () => {
                 return;
             }
             setsubmitButtonDisabled(false);
-            navigate('/');
+            navigate('/dashboard/welcome');
         } catch (err) {
             setsubmitButtonDisabled(false);
             seterrorMsg("Error: " + err.message);
         }
     };
     return (
-        <div className='flex justify-center font-poppins items-center bg-base-200 w-[100vw] h-[100vh] relative sm:pt-0 '>
+        <div className='flex justify-center items-center bg-base-200 w-[100vw] h-[100vh] relative sm:pt-0 '>
             <div className='bg-primary rounded-xl w-full max-w-md flex flex-col justify-center items-center h-full max-h-[26rem] absolute'>
                 <Fade duration={1500}>
                     <h1 className='text-2xl text-center pb-3 text-primary-content font-bold'>Welcome back!</h1>

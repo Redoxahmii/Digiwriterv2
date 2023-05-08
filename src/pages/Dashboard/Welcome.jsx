@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom"
 const Welcome = () => {
     const navigate = useNavigate()
     return (
-        <div className="bg-base-200 w-[90vw] sm:w-full flex-col font-poppins h-[90vh]  flex justify-center items-center">
+        <div className="bg-base-200 w-[90vw] sm:w-full flex-col h-[90vh] flex justify-center items-center">
             {/* <h1 className="text-5xl font-semibold">Welcome to Dashboard</h1> */}
             <div className="card w-96 h-[25rem] bg-base-100 mt-10 rounded-2xl shadow-xl">
                 <div className="card-body items-center text-center">

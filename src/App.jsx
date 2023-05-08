@@ -8,22 +8,24 @@ import Welcome from './pages/Dashboard/Welcome'
 import { useContext } from 'react'
 import { AuthContext } from './utills/AuthContext'
 import Protected from './utills/Protected'
+import Error from './pages/Error'
 // eslint-disable-next-line react/prop-types
 const App = () => {
   const { user } = useContext(AuthContext)
   return (
-    <>
+    <div className='font-poppins'>
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/*" element={<Error />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/dashboard/*" element={<Protected user={user}> <Dashboard /> </Protected>} >
           <Route path='welcome' element={<Welcome></Welcome>}></Route>
           <Route path='signup' element={<Signup />}></Route>
         </Route>
       </Routes>
-    </>
+    </div>
   )
 }
 
