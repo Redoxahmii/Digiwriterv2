@@ -1,0 +1,16 @@
+// const prompt = `Introduction
+        // Writing an ${tone.toLowerCase()} article about ${topic} that is ${length.toLowerCase()} in length can be challenging. In this article, we will explore the various aspects of ${topic} and how to incorporate the keywords ${keywords} into your writing.
+        // What is ${topic}?
+        // Before we dive into the details, let's first understand what ${topic} is all about. ${topic} refers to…
+        // Importance of ${topic}
+        // ${topic} is an important aspect of our lives because…
+        // Key Aspects of ${topic}
+        // There are several key aspects of ${topic} that we need to be aware of. These include…
+        // Incorporating ${keywords} into Your Writing
+        // To write an effective ${tone.toLowerCase()} article about ${topic} that is ${length.toLowerCase()} in length, it's important to incorporate the keywords ${keywords}. Here are some tips on how to do that:
+        // Use ${keywords} in your headings to make your article more structured and easy to read.
+        // Incorporate ${keywords} into your introduction to grab the reader's attention.
+        // Use ${keywords} throughout your article to reinforce your main points.
+        // How ${topic} Affects Our Daily Lives
+        // ${topic} has a significant impact on our daily lives. It affects us in several ways, such as…
+        // In conclusion, writing an ${tone.toLowerCase()} article about ${topic} that is ${length.toLowerCase()} in length can be challenging, but by incorporating the keywords ${keywords} into your writing, you can make your article more effective and engaging. By understanding the various aspects of ${topic} and how it affects us, we can make informed decisions and lead a better life.`;

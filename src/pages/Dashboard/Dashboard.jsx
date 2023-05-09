@@ -54,7 +54,6 @@ const Dashboard = () => {
                                     clientId='client_Gvi7n3wdBfgA2jqFMU5Kib'
                                     config={{
                                         documentDialect: "american",
-                                        autocomplete: "on",
                                     }}
                                 >
                                     <CKEditor

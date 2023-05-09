@@ -10,6 +10,8 @@ import { AuthContext } from './utills/AuthContext'
 import Protected from './utills/Protected'
 import Error from './pages/Error'
 import Article from './pages/Dashboard/Article'
+import openai from './utills/Openai'
+import Openai from './utills/Openai'
 // eslint-disable-next-line react/prop-types
 const App = () => {
   const { user } = useContext(AuthContext)
@@ -25,6 +27,7 @@ const App = () => {
           <Route path='welcome' element={<Welcome></Welcome>}></Route>
           <Route path='signup' element={<Signup />}></Route>
           <Route path='article' element={<Article />}></Route>
+          <Route path='openai' element={<Openai />}></Route>
         </Route>
       </Routes>
     </div>
