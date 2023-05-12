@@ -11,7 +11,7 @@ const Welcome = () => {
                 </div>
                 <figure><img src="/dash.jpg" alt="temp" /></figure>
             </div>
-            <button onClick={() => navigate('/dashboard/signup')} className="btn btn-primary rounded-xl mt-10">Get Started</button>
+            <button onClick={() => navigate('/dashboard/article')} className="btn btn-primary rounded-xl mt-10">Get Started</button>
         </div>
     )
 }

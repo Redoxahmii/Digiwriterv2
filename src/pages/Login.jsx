@@ -22,7 +22,6 @@ const Login = () => {
         e.preventDefault();
         setsubmitButtonDisabled(true);
         seterrorMsg("");
-
         try {
             const res = await signInWithEmailAndPassword(auth, email, password);
             if (!res.user.emailVerified) {

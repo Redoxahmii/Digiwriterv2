@@ -53,7 +53,7 @@ const Article = () => {
     return (
         <>
             <div className="w-[90vw] h-[90vh] bg-base-200">
-                <div className="w-full h-full flex flex-wrap mx-20 gap-96">
+                <div className="w-full h-full flex flex-wrap ml-28 mx-10 gap-96">
                     <div className="mt-10">
                         <div className="form-control w-full max-w-xs gap-2">
                             <label className="label">
