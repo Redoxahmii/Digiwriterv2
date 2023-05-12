@@ -33,6 +33,7 @@ const Article = () => {
             setAiResponse(response.data.choices[0].text);
             setLoading(false);
             setError('');
+            console.log(response)
         } else {
             setLoading(false);
             setError('Something went wrong. Please try again later.');
@@ -47,7 +48,10 @@ const Article = () => {
         setAiResponse('');
         setLoading(true);
         const prompt = `"Write an article about ${topic} that is ${length.toLowerCase()} in length and has a ${tone.toLowerCase()} tone. Incorporate the keywords ${keywords} into your writing to make it more effective. Use headings to structure your article and make it easy to read. Your article should provide an introduction to ${topic}, explain its importance, explore its key aspects, and discuss how it affects our daily lives. In the introduction, provide some background information about ${topic} and explain why it is important to discuss it. In the section on the importance of ${topic}, discuss why it matters and how it impacts our lives. In the section on key aspects, explore the different facets of ${topic} and provide examples to illustrate your points. In the section on how ${topic} affects our daily lives, discuss the practical implications of ${topic} and how it impacts our behavior, decisions, and well-being. In the conclusion, summarize your main points and emphasize the significance of ${topic} in today's world. Use a call-to-action to encourage readers to take action or learn more about ${topic}."`
-        Openai({ prompt, onComplete: handleComplete })();
+        const temperature = '0.4'
+        const max_tokens = '2500'
+
+        Openai({ prompt, onComplete: handleComplete, temperature, max_tokens })();
     }
 
     return (

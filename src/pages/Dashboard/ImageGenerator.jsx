@@ -62,7 +62,7 @@ const ImageGenerator = () => {
     };
     return (
         <div className="w-[90vw] h-[90vh] bg-base-200">
-            <div className="flex w-full h-full flex-wrap pl-20 pt-24 gap-96 mx-10">
+            <div className="flex w-full h-full flex-wrap pl-20 pt-16 gap-96 mx-10">
                 <div className="form-control w-full max-w-xs gap-2">
                     <label className="label">
                         <h1 className="text-lg font-bold justify-center">Due to high quality images take time to show please be patient! 🦥</h1>
@@ -92,7 +92,7 @@ const ImageGenerator = () => {
                 </div>
                 <div className="">
                     <h1 className="text-xl text-center font-semibold mb-2">Scroll to see the images 👇🏼</h1>
-                    <div className="carousel gap-2 carousel-vertical h-96 relative z-10 carousel-end rounded-box bg-base-300">
+                    <div className="carousel gap-2 carousel-vertical h-[26rem] relative z-10 carousel-end rounded-box bg-base-300">
                         {image1 && (
                             <div className="carousel-item h-full">
                                 <img src={image1} className="bg-contain max-w-full max-h-full" alt="AI" />
