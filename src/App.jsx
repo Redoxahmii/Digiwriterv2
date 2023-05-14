@@ -12,6 +12,7 @@ import Error from './pages/Error'
 import Article from './pages/Dashboard/Article'
 import ImageGenerator from './pages/Dashboard/ImageGenerator'
 import Chatbot from './pages/Dashboard/Chatbot'
+import Email from './pages/Dashboard/Email'
 // eslint-disable-next-line react/prop-types
 const App = () => {
   const { user } = useContext(AuthContext)
@@ -29,6 +30,7 @@ const App = () => {
           <Route path='article' element={<Article />}></Route>
           <Route path='imageGenerator' element={<ImageGenerator />}></Route>
           <Route path='chatbot' element={<Chatbot />}></Route>
+          <Route path='email' element={<Email />}></Route>
         </Route>
       </Routes>
     </div>

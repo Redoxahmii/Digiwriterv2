@@ -1,5 +1,6 @@
 import { useState } from "react"
 import Openai from "../../utills/Openai"
+import { Fade } from "react-awesome-reveal";
 
 const Chatbot = () => {
     const [conversation, setConversation] = useState([]);
@@ -8,28 +9,31 @@ const Chatbot = () => {
     const handleSubmit = () => {
         const prompt = `"The following is a conversation with an AI assistant. The assistant is helpful, creative, clever, and very friendly. ${conversation.map(c => c.text).join(' ')} ${message}"`;
         const onComplete = (gptResponse) => {
-            console.log(gptResponse)
             const response = gptResponse.data.choices[0].text;
             setConversation([...conversation, { text: message, isUser: true }, { text: response, isUser: false }]);
             setMessage('');
         };
         const temperature = '0.9';
-        const max_tokens = '150';
+        const max_tokens = '200';
         const presence_penalty = '0.6';
         const frequency_penalty = '0.0';
         const top_p = '1';
-        Openai({ prompt, onComplete, temperature, max_tokens, presence_penalty, frequency_penalty, top_p })();
+        const stop = ["Human:", "AI:"];
+        Openai({ prompt, onComplete, temperature, max_tokens, presence_penalty, frequency_penalty, top_p, stop })();
     };
 
     return (
-        <div>
-
+        <Fade duration={500}>
             <div className='mockup-window border bg-base-300 h-[80vh] overflow-y-scroll max-h-[calc(80vh-0rem)]'>
                 <div className="bg-base-200 h-[80vh] px-4 relative ">
                     <div className=" overflow-y-scroll max-h-[calc(80vh-3.5rem)]">
+
+                        <div className="chat chat-start">
+                            <div className="chat-bubble chat-bubble-primary">Welcome! I am your personal AI  Assistant 🤖. How can I assist you today?</div>
+                        </div>
                         {conversation.map((c, i) => (
                             <div key={i} className={`chat ${c.isUser ? 'chat-end' : 'chat-start'}`}>
-                                <div className="chat-bubble">{c.text}</div>
+                                <div className={`chat-bubble ${c.isUser ? '' : 'chat-bubble-primary'}`}>{c.text}</div>
                             </div>
                         ))}
                     </div>
@@ -45,7 +49,7 @@ const Chatbot = () => {
                     </button>
                 </div>
             </div>
-        </div>
+        </Fade>
     );
 };
 
