@@ -90,7 +90,7 @@ const Article = () => {
                                 <option value="Medium">Medium</option>
                                 <option value="Long">Long</option>
                             </select>
-                            <button className="btn btn-primary mt-2 rounded-xl" onClick={handleSubmit}> Submit</button>
+                            <button className="btn btn-primary mt-5 rounded-xl" onClick={handleSubmit}> Submit</button>
                         </div>
                     </div>
                     <div className="mt-10">

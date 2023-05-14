@@ -13,6 +13,9 @@ import Article from './pages/Dashboard/Article'
 import ImageGenerator from './pages/Dashboard/ImageGenerator'
 import Chatbot from './pages/Dashboard/Chatbot'
 import Email from './pages/Dashboard/Email'
+import ProductDesciption from './pages/Dashboard/ProductDesciption'
+import ProductNameGenerator from './pages/Dashboard/ProductNameGenerator'
+import AddCopy from './pages/Dashboard/AddCopy'
 // eslint-disable-next-line react/prop-types
 const App = () => {
   const { user } = useContext(AuthContext)
@@ -31,6 +34,9 @@ const App = () => {
           <Route path='imageGenerator' element={<ImageGenerator />}></Route>
           <Route path='chatbot' element={<Chatbot />}></Route>
           <Route path='email' element={<Email />}></Route>
+          <Route path='productgenerator' element={<ProductNameGenerator />}></Route>
+          <Route path='ProductDesciption' element={<ProductDesciption />}></Route>
+          <Route path='AddCopy' element={<AddCopy />}></Route>
         </Route>
       </Routes>
     </div>

@@ -1,22 +1,21 @@
 import { useState } from "react"
 import { RiseLoader } from "react-spinners"
 import Openai from "../../utills/Openai"
-const Email = () => {
-    const [loading, setloading] = useState(false)
+const ProductDesciption = () => {
+    const [Product, setProduct] = useState('')
+    const [Context, setContext] = useState('')
     const [aiResponse, setAiResponse] = useState('')
+    const [loading, setLoading] = useState(false)
     const [error, setError] = useState('')
-    const [Subject, setSubject] = useState('')
-    const [Recipient, setRecipient] = useState('')
-    const [Name, setName] = useState('')
-    const [Title, setTitle] = useState('')
+    const [temperature, setTemperature] = useState(0.5);
     const handleComplete = (response) => {
         if (response && response.data && response.data.choices && response.data.choices.length > 0) {
             setAiResponse(response.data.choices[0].text);
-            setloading(false)
+            setLoading(false)
             setError('');
             console.log(response)
         } else {
-            setloading(false);
+            setLoading(false);
             setError('Something went wrong. Please try again later.');
         }
     }
@@ -24,41 +23,49 @@ const Email = () => {
         navigator.clipboard.writeText(aiResponse);
     }
     const handleSubmit = () => {
-        if (!Subject) {
-            setError('Subject is required');
+        if (!Product) {
+            setError('Product is required');
             return;
         }
-        setloading(true)
+        if (!Context) {
+            setError('Context is required');
+            return;
+        }
+        setLoading(true)
         setAiResponse('')
-        const prompt = `"Imagine that you are a professional email writer and you have been tasked with writing an email on behalf of a business. The subject of the email is ${Subject}, and it is important that the email is written in a professional manner, as it will be used for business conduct. The recipient of the email is ${Recipient}, and you should include their name in the closing of the email when thanking them. Additionally, the email should include a closing salutation that includes the sender's name, which is ${Name}, as well as their title, which is ${Title}. Please ensure that the email is clear, concise, and free of any errors or typos. Thank you for your attention to detail and professionalism in crafting this email."`
-        const temperature = '0.7'
-        const max_tokens = '2000'
-        Openai({ prompt, onComplete: handleComplete, temperature, max_tokens })();
+        const prompt = `"product Description for a Product called ${Product} that specializes  in ${Context}"`
+        const temperatureString = temperature.toFixed(2);
+        const max_tokens = '250'
+        const top_p = '1'
+        Openai({ prompt, onComplete: handleComplete, temperature: temperatureString, max_tokens, top_p })();
     }
     return (
         <>
             <div className="w-[90vw] h-[90vh] bg-base-200">
                 <div className="w-full h-full flex flex-wrap ml-28 mx-10 gap-96">
-                    <div className="mt-10">
+                    <div className="mt-24">
                         <div className="form-control w-full max-w-xs gap-2">
                             <label className="label">
-                                <span className="label-text font-semibold">Subject</span>
+                                <span className="label-text font-semibold">Product Name</span>
                             </label>
-                            <input type="text" placeholder="Subject" value={Subject} onChange={(e) => setSubject(e.target.value)} className="input input-primary  input-bordered w-full max-w-xs" />
+                            <input type="text" placeholder="ie. DaftPunks" value={Product} onChange={(e) => setProduct(e.target.value)} className="input input-primary  input-bordered w-full max-w-xs" />
+                            <label className="label">
+                                <span className="label-text font-semibold">Context</span>
+                            </label>
+                            <input type="text" placeholder="ie. Razor Blades" value={Context} onChange={(e) => setContext(e.target.value)} className="input input-primary  input-bordered w-full max-w-xs" />
+                            <label className="label">
+                                <span className="label-text font-semibold">Creativity</span>
+                            </label>
+                            <input type="range" min="0" max="100" value={temperature * 100} className="range range-primary" step="1" onChange={(e) => setTemperature(e.target.value / 100)} />
+                            <div className="w-full flex justify-between text-xs px-2">
+                                <span>Mild</span>
+                                <span>Moderate</span>
+                                <span>Spicy</span>
+                                <span>Fiery</span>
+                                <span>Inferno</span>
+                            </div>
+                            <button onClick={handleSubmit} className="btn btn-primary mt-6 rounded-xl">Submit</button>
                             {error && <p className='text-error'>{error}</p>}
-                            <label className="label">
-                                <span className="label-text font-semibold">Your Name</span>
-                            </label>
-                            <input type="text" placeholder="Your Name" value={Name} onChange={(e) => setName(e.target.value)} className="input input-primary  input-bordered w-full max-w-xs" />
-                            <label className="label">
-                                <span className="label-text font-semibold">Your Title</span>
-                            </label>
-                            <input type="text" placeholder="Your Title" value={Title} onChange={(e) => setTitle(e.target.value)} className="input input-primary  input-bordered w-full max-w-xs" />
-                            <label className="label">
-                                <span className="label-text font-semibold">Recipient Name</span>
-                            </label>
-                            <input type="text" placeholder="Recipient Name" value={Recipient} onChange={(e) => setRecipient(e.target.value)} className="input input-primary input-bordered w-full max-w-xs" />
-                            <button onClick={handleSubmit} className="btn btn-primary mt-5 rounded-xl">Submit</button>
                         </div>
                     </div>
                     <div className="mt-10">
@@ -91,4 +98,4 @@ const Email = () => {
     )
 }
 
-export default Email
+export default ProductDesciption
