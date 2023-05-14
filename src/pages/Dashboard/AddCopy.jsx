@@ -22,7 +22,7 @@ const AddCopy = () => {
     }
     const handleSubmit = () => {
         if (!Product) {
-            setError('Product is required');
+            setError('Product Description is required');
             return;
         }
         setLoading(true)

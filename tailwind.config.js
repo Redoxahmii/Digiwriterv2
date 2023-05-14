@@ -5,6 +5,7 @@ export default {
     extend: {
       fontFamily: {
         poppins: ["Poppins", "sans-serif"],
+        instagram: ["Just Another Hand", "cursive"],
       },
     },
   },
