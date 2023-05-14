@@ -24,7 +24,7 @@ const Chatbot = () => {
 
     return (
         <Fade duration={500}>
-            <div className='mockup-window border bg-base-300 h-[80vh] overflow-y-scroll max-h-[calc(80vh-0rem)]'>
+            <div className='mockup-window border border-primary bg-base-300 h-[80vh] overflow-y-scroll max-h-[calc(80vh-0rem)]'>
                 <div className="bg-base-200 h-[80vh] px-4 relative ">
                     <div className=" overflow-y-scroll max-h-[calc(80vh-3.5rem)]">
 
