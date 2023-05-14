@@ -10,7 +10,7 @@ export default {
     },
   },
   daisyui: {
-    themes: ["valentine", "business", "aqua"],
+    themes: ["valentine", "business", "aqua", "dark", "forest"],
   },
   // eslint-disable-next-line no-undef
   plugins: [require("daisyui")],
