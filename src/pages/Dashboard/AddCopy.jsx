@@ -12,7 +12,6 @@ const AddCopy = () => {
             setAiResponse(response.data.choices[0].text);
             setLoading(false)
             setError('');
-            console.log(response)
         } else {
             setLoading(false);
             setError('Something went wrong. Please try again later.');

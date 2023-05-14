@@ -54,7 +54,6 @@ const ImageGenerator = () => {
                 setimage4(res.data.data[3].url)
             }
             setLoaded(true)
-            console.log(res)
         } catch (e) {
             setError(e);
         }

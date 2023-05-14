@@ -14,7 +14,6 @@ const Email = () => {
             setAiResponse(response.data.choices[0].text);
             setloading(false)
             setError('');
-            console.log(response)
         } else {
             setloading(false);
             setError('Something went wrong. Please try again later.');
