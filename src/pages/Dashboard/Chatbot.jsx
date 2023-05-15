@@ -24,9 +24,9 @@ const Chatbot = () => {
 
     return (
         <Fade duration={500}>
-            <div className='mockup-window border border-primary bg-base-300 h-[80vh] overflow-y-scroll max-h-[calc(80vh-0rem)]'>
+            <div className='mockup-window flex flex-col border border-primary bg-base-300 h-[80vh] '>
                 <div className="bg-base-200 h-[80vh] px-4 relative ">
-                    <div className=" overflow-y-scroll max-h-[calc(80vh-3.5rem)]">
+                    <div className=" overflow-y-scroll max-h-[calc(80vh-10rem)]">
 
                         <div className="chat chat-start">
                             <div className="chat-bubble chat-bubble-primary">Welcome! I am your personal AI  Assistant 🤖. How can I assist you today?</div>
@@ -38,15 +38,15 @@ const Chatbot = () => {
                         ))}
                     </div>
                 </div>
-            </div>
-            <div className="form-control bottom-24 absolute left-[250px]">
-                <div className="input-group">
-                    <input type="text" placeholder="Type your message..." className="input w-[76vw] ml-2 input-bordered" value={message} onChange={(e) => setMessage(e.target.value)} />
-                    <button className="btn btn-square" onClick={handleSubmit}>
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6">
-                            <path strokeLinecap="round" strokeLinejoin="round" d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5" />
-                        </svg>
-                    </button>
+                <div className="form-control flex mx-2 items-end bottom-24 ">
+                    <div className="input-group">
+                        <input type="text" placeholder="Type your message..." className="input w-full input-bordered" value={message} onChange={(e) => setMessage(e.target.value)} />
+                        <button className="btn btn-square" onClick={handleSubmit}>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6">
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5" />
+                            </svg>
+                        </button>
+                    </div>
                 </div>
             </div>
         </Fade>
