@@ -8,7 +8,7 @@ const ImageGenerator = () => {
     const [image3, setimage3] = useState('https://via.placeholder.com/1024x1024.png?text=Image+3');
     const [image4, setimage4] = useState('https://via.placeholder.com/1024x1024.png?text=Image+4');
     const [Response, setResponse] = useState('');
-    const [num, setNum] = useState('');
+    const [num, setNum] = useState('1');
     const [isLoading, setIsLoading] = useState(false);
     const [loaded, setLoaded] = useState(false)
     const [error, setError] = useState('');
@@ -54,6 +54,7 @@ const ImageGenerator = () => {
                 setimage4(res.data.data[3].url)
             }
             setLoaded(true)
+            console.log(res)
         } catch (e) {
             setError(e);
         }
@@ -61,7 +62,7 @@ const ImageGenerator = () => {
     };
     return (
         <div className="w-[90vw] h-[90vh] bg-base-200">
-            <div className="flex w-full h-full flex-wrap pl-20 pt-16 gap-96 mx-10">
+            <div className="flex w-full h-full flex-wrap ml-20 mt-16 gap-80 mx-10">
                 <div className="form-control w-full max-w-xs gap-2">
                     <label className="label">
                         <h1 className="text-lg font-bold justify-center">Due to high quality images take time to show please be patient! 🦥</h1>

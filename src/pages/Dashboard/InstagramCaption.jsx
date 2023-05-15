@@ -36,7 +36,7 @@ const InstagramCaption = () => {
     return (
         <>
             <div className="w-[90vw] h-[90vh] bg-base-200">
-                <div className="w-full h-full flex flex-wrap ml-28 mx-10 gap-[28rem]">
+                <div className="w-full h-full flex flex-wrap ml-28 mx-10 gap-[24rem]">
                     <div className="mt-36">
                         <div className="form-control w-full max-w-xs gap-2">
                             <label className="label">
@@ -84,7 +84,7 @@ const InstagramCaption = () => {
                                         </div>
                                     </div>
                                 </div>
-                                <div className="artboard artboard-demo w-[240px] h-[400px]">
+                                <div className="artboard artboard-demo w-full md:w-[240px] h-[400px]">
                                     {loading ? (
                                         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
                                             <RiseLoader color='white' loading={loading} size={15} />

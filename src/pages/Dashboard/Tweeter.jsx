@@ -36,7 +36,7 @@ const Tweeter = () => {
     return (
         <>
             <div className="w-[90vw] h-[90vh] bg-base-200">
-                <div className="w-full h-full flex flex-wrap ml-28 mx-10 gap-[28rem]">
+                <div className="w-full h-full flex flex-wrap ml-28 mx-10 gap-[24rem]">
                     <div className="mt-36">
                         <div className="form-control w-full max-w-xs gap-2">
                             <label className="label">
