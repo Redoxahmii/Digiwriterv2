@@ -75,7 +75,7 @@ const ImageGenerator = () => {
                         <span className="label-text font-semibold">Number of images</span>
                     </label>
                     <select className="select select-bordered select-primary text-gray-400 w-full max-w-xs" value={num} onChange={(e) => setNum(e.target.value)}>
-                        <option value="1">1</option>
+                        <option value="1" selected>1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
                         <option value="4">4</option>
