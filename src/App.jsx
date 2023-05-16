@@ -18,6 +18,7 @@ import ProductNameGenerator from './pages/Dashboard/ProductNameGenerator'
 import AddCopy from './pages/Dashboard/AddCopy'
 import InstagramCaption from './pages/Dashboard/InstagramCaption'
 import Tweeter from './pages/Dashboard/Tweeter'
+import Summarizer from './pages/Dashboard/Summarizer'
 // eslint-disable-next-line react/prop-types
 const App = () => {
   const { user } = useContext(AuthContext)
@@ -41,8 +42,10 @@ const App = () => {
           <Route path='AddCopy' element={<AddCopy />}></Route>
           <Route path='instacap' element={<InstagramCaption />}></Route>
           <Route path='tweeter' element={<Tweeter />}></Route>
+          <Route path='Summarizer' element={<Summarizer />}></Route>
         </Route>
       </Routes>
+      {/* <Underbar></Underbar> */}
     </div>
   )
 }

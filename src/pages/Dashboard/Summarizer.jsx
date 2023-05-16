@@ -1,9 +1,8 @@
 import { useState } from "react"
-import { RiseLoader } from "react-spinners"
 import Openai from "../../utills/Openai"
-const ProductDesciption = () => {
+import { RiseLoader } from "react-spinners"
+const Summarizer = () => {
     const [Product, setProduct] = useState('')
-    const [Context, setContext] = useState('')
     const [aiResponse, setAiResponse] = useState('')
     const [loading, setLoading] = useState(false)
     const [error, setError] = useState('')
@@ -26,13 +25,9 @@ const ProductDesciption = () => {
             setError('Product is required');
             return;
         }
-        if (!Context) {
-            setError('Context is required');
-            return;
-        }
         setLoading(true)
         setAiResponse('')
-        const prompt = `"product Description for a Product called ${Product} that specializes  in ${Context}"`
+        const prompt = `"Summarize this content: ${Product}"`
         const temperatureString = temperature.toFixed(2);
         const max_tokens = '250'
         const top_p = '1'
@@ -42,16 +37,12 @@ const ProductDesciption = () => {
         <>
             <div className="hero min-h-[80vh]">
                 <div className="hero-content flex-col lg:flex-row lg:gap-96">
-                    <div className="mt-24">
+                    <div className="">
                         <div className="form-control w-full max-w-xs gap-2">
                             <label className="label">
-                                <span className="label-text font-semibold">Product Name</span>
+                                <span className="label-text font-semibold">Summarizer</span>
                             </label>
-                            <input type="text" placeholder="ie. DaftPunks" value={Product} onChange={(e) => setProduct(e.target.value)} className="input input-primary  input-bordered w-full max-w-xs" />
-                            <label className="label">
-                                <span className="label-text font-semibold">Context</span>
-                            </label>
-                            <input type="text" placeholder="ie. Razor Blades" value={Context} onChange={(e) => setContext(e.target.value)} className="input input-primary  input-bordered w-full max-w-xs" />
+                            <textarea name="AI Response" className="border border-primary textarea w-full h-full" cols="40" rows="1" onChange={(e) => setProduct(e.target.value)}></textarea>
                             <label className="label">
                                 <span className="label-text font-semibold">Creativity</span>
                             </label>
@@ -97,4 +88,4 @@ const ProductDesciption = () => {
     )
 }
 
-export default ProductDesciption
+export default Summarizer

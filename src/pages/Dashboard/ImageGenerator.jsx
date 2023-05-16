@@ -61,8 +61,33 @@ const ImageGenerator = () => {
         setIsLoading(false);
     };
     return (
-        <div className="w-[90vw] h-[90vh] bg-base-200">
-            <div className="flex w-full h-full flex-wrap ml-20 mt-16 gap-80 mx-10">
+        <div className="hero min-h-[80vh]">
+            <div className="hero-content flex-col-reverse lg:flex-row-reverse lg:gap-96">
+                <div className="">
+                    <h1 className="text-xl text-center font-semibold mb-2">Scroll to see the images 👇🏼</h1>
+                    <div className="carousel gap-2 carousel-vertical h-[26rem] relative z-10 carousel-end rounded-box bg-base-300">
+                        {image1 && (
+                            <div className="carousel-item h-full">
+                                <img src={image1} className="bg-contain max-w-full max-h-full" alt="AI" />
+                            </div>
+                        )}
+                        {image2 && (
+                            <div className="carousel-item h-full">
+                                <img src={image2} className="bg-contain max-w-full max-h-full" alt="AI" />
+                            </div>
+                        )}
+                        {image3 && (
+                            <div className="carousel-item h-full">
+                                <img src={image3} className="bg-contain max-w-full max-h-full" alt="AI" />
+                            </div>
+                        )}
+                        {image4 && (
+                            <div className="carousel-item h-full">
+                                <img src={image4} className="bg-contain max-w-full max-h-full" alt="AI" />
+                            </div>
+                        )}
+                    </div>
+                </div>
                 <div className="form-control w-full max-w-xs gap-2">
                     <label className="label">
                         <h1 className="text-lg font-bold justify-center">Due to high quality images take time to show please be patient! 🦥</h1>
@@ -89,31 +114,6 @@ const ImageGenerator = () => {
                             <p className="mt-3 text-md"> Setting images...</p>
                         </div>
                     )}
-                </div>
-                <div className="">
-                    <h1 className="text-xl text-center font-semibold mb-2">Scroll to see the images 👇🏼</h1>
-                    <div className="carousel gap-2 carousel-vertical h-[26rem] relative z-10 carousel-end rounded-box bg-base-300">
-                        {image1 && (
-                            <div className="carousel-item h-full">
-                                <img src={image1} className="bg-contain max-w-full max-h-full" alt="AI" />
-                            </div>
-                        )}
-                        {image2 && (
-                            <div className="carousel-item h-full">
-                                <img src={image2} className="bg-contain max-w-full max-h-full" alt="AI" />
-                            </div>
-                        )}
-                        {image3 && (
-                            <div className="carousel-item h-full">
-                                <img src={image3} className="bg-contain max-w-full max-h-full" alt="AI" />
-                            </div>
-                        )}
-                        {image4 && (
-                            <div className="carousel-item h-full">
-                                <img src={image4} className="bg-contain max-w-full max-h-full" alt="AI" />
-                            </div>
-                        )}
-                    </div>
                 </div>
             </div>
         </div>
