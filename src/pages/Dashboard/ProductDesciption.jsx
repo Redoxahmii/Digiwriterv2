@@ -42,7 +42,7 @@ const ProductDesciption = () => {
         <>
             <div className="hero min-h-[80vh]">
                 <div className="hero-content flex-col lg:flex-row lg:gap-96">
-                    <div className="mt-24">
+                    <div className="">
                         <div className="form-control w-full max-w-xs gap-2">
                             <label className="label">
                                 <span className="label-text font-semibold">Product Name</span>
@@ -67,7 +67,7 @@ const ProductDesciption = () => {
                             {error && <p className='text-error'>{error}</p>}
                         </div>
                     </div>
-                    <div className="mt-10">
+                    <div className="">
                         <label className="label">
                             <span className="label-text font-semibold"> AI Response</span>
                         </label>

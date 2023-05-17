@@ -58,7 +58,7 @@ const Summarizer = () => {
                             {error && <p className='text-error'>{error}</p>}
                         </div>
                     </div>
-                    <div className="mt-10">
+                    <div className="">
                         <label className="label">
                             <span className="label-text font-semibold"> AI Response</span>
                         </label>

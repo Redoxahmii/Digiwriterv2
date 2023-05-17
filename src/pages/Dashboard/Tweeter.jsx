@@ -37,7 +37,7 @@ const Tweeter = () => {
         <>
             <div className="hero min-h-[80vh]">
                 <div className="hero-content flex-col lg:flex-row lg:gap-96">
-                    <div className="mt-36">
+                    <div className="">
                         <div className="form-control w-full max-w-xs gap-2">
                             <label className="label">
                                 <span className="label-text font-semibold">Tweet Context</span>
@@ -58,7 +58,7 @@ const Tweeter = () => {
                             {error && <p className='text-error'>{error}</p>}
                         </div>
                     </div>
-                    <div className="mt-7">
+                    <div className="">
                         <label className="label">
                             <span className="label-text font-semibold font"> AI Response</span>
                         </label>

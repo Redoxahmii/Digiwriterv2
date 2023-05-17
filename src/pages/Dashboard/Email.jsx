@@ -38,7 +38,7 @@ const Email = () => {
         <>
             <div className="hero min-h-[80vh]">
                 <div className="hero-content flex-col lg:flex-row lg:gap-96">
-                    <div className="mt-10">
+                    <div className="">
                         <div className="form-control w-full max-w-xs gap-2">
                             <label className="label">
                                 <span className="label-text font-semibold">Subject</span>
@@ -60,7 +60,7 @@ const Email = () => {
                             <button onClick={handleSubmit} className="btn btn-primary mt-5 rounded-xl">Submit</button>
                         </div>
                     </div>
-                    <div className="mt-10">
+                    <div className="">
                         <label className="label">
                             <span className="label-text font-semibold"> AI Response</span>
                         </label>

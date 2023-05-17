@@ -32,20 +32,20 @@ const App = () => {
         <Route path="/signup" element={<Signup />} />
         <Route path="/dashboard/*" element={<Protected user={user}><Dashboard /></Protected>} >
           <Route path='welcome' element={<Welcome></Welcome>}></Route>
+          <Route path="*" element={<Error />} />
           <Route path='signup' element={<Signup />}></Route>
           <Route path='article' element={<Article />}></Route>
           <Route path='imageGenerator' element={<ImageGenerator />}></Route>
           <Route path='chatbot' element={<Chatbot />}></Route>
           <Route path='email' element={<Email />}></Route>
           <Route path='productgenerator' element={<ProductNameGenerator />}></Route>
-          <Route path='ProductDesciption' element={<ProductDesciption />}></Route>
+          <Route path='ProductDescription' element={<ProductDesciption />}></Route>
           <Route path='AddCopy' element={<AddCopy />}></Route>
           <Route path='instacap' element={<InstagramCaption />}></Route>
           <Route path='tweeter' element={<Tweeter />}></Route>
           <Route path='Summarizer' element={<Summarizer />}></Route>
         </Route>
       </Routes>
-      {/* <Underbar></Underbar> */}
     </div>
   )
 }

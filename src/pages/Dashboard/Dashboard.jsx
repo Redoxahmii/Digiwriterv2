@@ -1,20 +1,54 @@
 import { Link, Outlet } from "react-router-dom";
 import Underbar from "../../components/Underbar";
+export const DrawerButton = () => {
+    return (
+        <label htmlFor="my-drawer-3" className="btn btn-circle btn-ghost
+         lg:hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h7" /></svg>
+        </label>
+    )
+}
 const Dashboard = () => {
-
     return (
         <>
             <div className="drawer drawer-mobile">
                 <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
                 <div className="drawer-content bg-base-200 flex flex-col pb-16">
-                    <label htmlFor="my-drawer-3" className="btn btn-square btn-ghost lg:hidden">
-                        Sidebar Open
-                    </label>
                     <Outlet></Outlet>
                 </div>
                 <div className="drawer-side">
                     <label htmlFor="my-drawer-3" className="drawer-overlay"></label>
-                    <ul className="menu p-4 w-80 bg-base-300 pb-20">
+                    <ul className="menu p-4 w-80 flex bg-base-300 pb-20">
+                        <li className="pb-2 rounded-lg">
+                            <div className="text-center rounded border-b-2 border-primary flex h-28 justify-center">
+                                <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" fill="currentColor" className="w-8 h-8"
+                                    viewBox="0 0 408.5 406.2" xmlSpace="preserve" >
+                                    <g >
+                                        <path fill='' d="M163.5,74.6c0-22.2,18.1-40.3,40.3-40.3c22.2,0,40.3,18.1,40.3,40.3V79L266,64.6l0-1.2c-5.4-30.1-31.6-51.9-62.2-51.9
+		c-34.8,0-63.1,28.3-63.1,63.1v109.2l22.8,15.1L163.5,74.6L163.5,74.6z"/>
+                                        <path fill='' d="M243.1,331.6c0,22.2-18.1,40.3-40.3,40.3c-22.2,0-40.3-18.1-40.3-40.3v-4.5l-22,14.6l0.2,1.1c5.4,30.1,31.6,51.9,62.2,51.9
+		c34.8,0,63.1-28.3,63.1-63.1V222.5l-22.8-15.1L243.1,331.6L243.1,331.6z"/>
+                                        <path fill='' d="M281.8,83.5l-93.8,55.8l-1.3,27.3l106.8-63.5c19.1-11.4,43.9-5.1,55.2,14c11.4,19.1,5.1,43.9-14,55.2l-3.8,2.3l23.5,11.4
+		l0.7-0.4l0.4-0.2c23.1-20,28.5-53.7,12.9-80c-8.6-14.5-22.4-24.7-38.7-28.9C313.2,72.5,296.2,74.9,281.8,83.5z"/>
+                                        <path fill='' d="M218.7,266.8l1.3-27.3L113.2,303c-9.2,5.5-20.1,7.1-30.5,4.4c-10.4-2.7-19.2-9.2-24.7-18.4c-11.4-19.1-5.1-43.9,14-55.2
+		l3.8-2.3L52,219.9l-0.8,0.8c-23.1,20-28.5,53.6-12.8,79.9c8.6,14.5,22.4,24.7,38.7,28.9c5.2,1.3,10.5,2,15.7,2
+		c11.2,0,22.3-3,32.1-8.9L218.7,266.8z"/>
+                                        <path fill='' d="M345.9,213.2l-94.5-54.6l-24.5,12.2L334.5,233c9.3,5.4,16,14.1,18.7,24.5s1.4,21.3-4,30.6s-14.1,16-24.5,18.7
+		c-10.4,2.8-21.3,1.3-30.6-4l-3.9-2.2l1.6,26.2l1.1,0.5c7,2.5,14.3,3.8,21.4,3.8c22,0,43.1-11.6,54.7-31.6
+		C386.4,269.3,376.1,230.6,345.9,213.2z"/>
+                                        <path fill='' d="M60.7,193l94.5,54.6l24.5-12.2L72.1,173.2c-19.2-11.1-25.8-35.8-14.7-55c11.1-19.2,35.8-25.8,55.1-14.7l3.9,2.2l-1.6-26.2
+		l-1.1-0.5c-28.8-10.4-60.8,1.3-76.1,27.8C20.2,136.9,30.5,175.6,60.7,193z"/>
+                                        <circle fill='' cx="296.1" cy="43.6" r="15.9" />
+                                        <circle fill='' cx="381.2" cy="202.1" r="15.9" />
+                                        <circle fill='' cx="294.1" cy="359.7" r="15.9" />
+                                        <circle fill='' cx="112.4" cy="43.6" r="15.9" />
+                                        <circle fill='' cx="27.3" cy="202.1" r="15.9" />
+                                        <circle fill='' cx="114.4" cy="359.7" r="15.9" />
+                                    </g>
+                                </svg>
+                                <h1 className="text-2xl font-semibold">Digiwriter</h1>
+                            </div>
+                        </li>
                         <li>
                             <Link to="/dashboard/welcome">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6">
@@ -68,7 +102,7 @@ const Dashboard = () => {
                         </li>
 
                         <li>
-                            <Link to="/dashboard/ProductDesciption">
+                            <Link to="/dashboard/ProductDescription">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6">
                                     <path strokeLinecap="round" strokeLinejoin="round" d="M15 9h3.75M15 12h3.75M15 15h3.75M4.5 19.5h15a2.25 2.25 0 002.25-2.25V6.75A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25v10.5A2.25 2.25 0 004.5 19.5zm6-10.125a1.875 1.875 0 11-3.75 0 1.875 1.875 0 013.75 0zm1.294 6.336a6.721 6.721 0 01-3.17.789 6.721 6.721 0 01-3.168-.789 3.376 3.376 0 016.338 0z" />
                                 </svg>

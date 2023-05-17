@@ -38,7 +38,7 @@ const AddCopy = () => {
         <>
             <div className="hero min-h-[80vh]">
                 <div className="hero-content flex-col lg:flex-row lg:gap-96">
-                    <div className="mt-24">
+                    <div className="">
                         <div className="form-control w-full max-w-xs gap-2">
                             <label className="label">
                                 <span className="label-text font-semibold">Product Desciption</span>
@@ -60,7 +60,7 @@ const AddCopy = () => {
                             <p className=" pt-3 font-semibold text-zinc-500 text-center">Use our Product Description tool to generate a description and use it here for better results!</p>
                         </div>
                     </div>
-                    <div className="mt-10">
+                    <div className="">
                         <label className="label">
                             <span className="label-text font-semibold"> AI Response</span>
                         </label>
