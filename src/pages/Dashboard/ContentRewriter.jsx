@@ -43,7 +43,7 @@ const ContentRewriter = () => {
                             <label className="label">
                                 <span className="label-text font-semibold">Rewriter</span>
                             </label>
-                            <textarea name="AI Response" className="border border-primary textarea w-full h-full" cols="40" rows="1" onChange={(e) => setProduct(e.target.value)}></textarea>
+                            <textarea name="AI Response" placeholder="Paste content here..." className="border border-primary textarea w-full h-full" cols="40" rows="1" onChange={(e) => setProduct(e.target.value)}></textarea>
                             <label className="label">
                                 <span className="label-text font-semibold">Creativity</span>
                             </label>

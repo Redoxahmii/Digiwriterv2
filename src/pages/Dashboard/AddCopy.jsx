@@ -4,6 +4,8 @@ import { RiseLoader } from "react-spinners"
 const AddCopy = () => {
     const [Product, setProduct] = useState('')
     const [aiResponse, setAiResponse] = useState('')
+    const [Context, setContext] = useState('')
+
     const [loading, setLoading] = useState(false)
     const [error, setError] = useState('')
     const [temperature, setTemperature] = useState(0.5);
@@ -25,12 +27,20 @@ const AddCopy = () => {
             setError('Product Description is required');
             return;
         }
+        if (!Context) {
+            setError('Please provide context')
+        }
         setLoading(true)
         setAiResponse('')
-        const prompt = `"Write a creative ad for the following product to run on Social Media aimed at parents:
-        Product:${Product}`
+        const prompt = `"I want you to act as a professional copywriter with experience in writing high-converting Facebook ads. The ad copy should be written in fluent English and should be between 100-150 words long. I want you to write a Facebook ad copy for a product/service that I will provide as the following"${Context}". The name of the product is "${Product}"and write it using the following guidelines:
+        
+        -Create a compelling headline that grabs attention and highlights the main benefit of the product/service
+        -Use clear and concise language in the body copy that focuses on the benefits of the product/service and addresses any potential objections
+        -Include a strong call to action that encourages users to take the desired action
+        -Use an image or video that visually demonstrates the product/service and resonates with the target audience
+        -Research the target audience demographics, such as age, gender, location, interests, and other characteristics that would help you to have a better understanding of the target audience, and create an ad that would be more appealing to them.`
         const temperatureString = temperature.toFixed(2);
-        const max_tokens = '250'
+        const max_tokens = '1500'
         const top_p = '1'
         Openai({ prompt, onComplete: handleComplete, temperature: temperatureString, max_tokens, top_p })();
     }
@@ -41,9 +51,13 @@ const AddCopy = () => {
                     <div className="">
                         <div className="form-control w-full max-w-xs gap-2">
                             <label className="label">
-                                <span className="label-text font-semibold">Product Desciption</span>
+                                <span className="label-text font-semibold">Name</span>
                             </label>
-                            <input type="text" placeholder="" value={Product} onChange={(e) => setProduct(e.target.value)} className="input input-primary  input-bordered w-full max-w-xs" />
+                            <input type="text" placeholder="ie. Handcrafted Handle Razors" value={Product} onChange={(e) => setProduct(e.target.value)} className="input input-primary  input-bordered w-full max-w-xs" />
+                            <label className="label">
+                                <span className="label-text font-semibold">Context</span>
+                            </label>
+                            <input type="text" placeholder="ie. for recent dads" value={Context} onChange={(e) => setContext(e.target.value)} className="input input-primary  input-bordered w-full max-w-xs" />
                             <label className="label">
                                 <span className="label-text font-semibold">Creativity</span>
                             </label>
@@ -57,7 +71,7 @@ const AddCopy = () => {
                             </div>
                             <button onClick={handleSubmit} className="btn btn-primary mt-6 rounded-xl">Submit</button>
                             {error && <p className='text-error'>{error}</p>}
-                            <p className=" pt-3 font-semibold text-zinc-500 text-center">Use our Product Description tool to generate a description and use it here for better results!</p>
+
                         </div>
                     </div>
                     <div className="">

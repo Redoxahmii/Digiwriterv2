@@ -45,7 +45,7 @@ const ProductNameGenerator = () => {
                     <div className="">
                         <div className="form-control w-full max-w-xs gap-2">
                             <label className="label">
-                                <span className="label-text font-semibold">Product Name</span>
+                                <span className="label-text font-semibold">Product</span>
                             </label>
                             <input type="text" placeholder="ie. Infirmary" value={Product} onChange={(e) => setProduct(e.target.value)} className="input input-primary  input-bordered w-full max-w-xs" />
                             <label className="label">

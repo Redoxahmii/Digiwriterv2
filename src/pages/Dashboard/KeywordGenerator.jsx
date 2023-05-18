@@ -42,7 +42,7 @@ const KeywordGenerator = () => {
                             <label className="label">
                                 <span className="label-text font-semibold">Keyword Generator</span>
                             </label>
-                            <textarea name="AI Response" placeholder="Provide Keywords here" className="border border-primary textarea w-full h-full" cols="40" rows="1" onChange={(e) => setProduct(e.target.value)}></textarea>
+                            <textarea name="AI Response" placeholder="Provide Keywords here to get better keywords..." className="border resize-none border-primary textarea w-full h-20" cols="40" rows="1" onChange={(e) => setProduct(e.target.value)}></textarea>
                             <label className="label">
                                 <span className="label-text font-semibold">Creativity</span>
                             </label>

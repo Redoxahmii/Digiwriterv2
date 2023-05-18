@@ -42,7 +42,7 @@ const TitleGenerator = () => {
                             <label className="label">
                                 <span className="label-text font-semibold">Title Generator</span>
                             </label>
-                            <textarea name="AI Response" placeholder="Provide Keywords here" className="border border-primary textarea w-full h-full" cols="40" rows="1" onChange={(e) => setProduct(e.target.value)}></textarea>
+                            <textarea name="AI Response" placeholder="Provide Keywords here for the title..." className="border border-primary textarea w-full h-20 resize-none" cols="40" rows="1" onChange={(e) => setProduct(e.target.value)}></textarea>
                             <label className="label">
                                 <span className="label-text font-semibold">Creativity</span>
                             </label>
