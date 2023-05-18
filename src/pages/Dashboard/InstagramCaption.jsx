@@ -84,7 +84,7 @@ const InstagramCaption = () => {
                                         </div>
                                     </div>
                                 </div>
-                                <div className="artboard artboard-demo w-full md:w-[240px] h-[400px]">
+                                <div className="artboard artboard-demo w-[240px] h-[400px]">
                                     {loading ? (
                                         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
                                             <RiseLoader color='white' loading={loading} size={15} />
