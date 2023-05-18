@@ -24,7 +24,7 @@ const Navbar = () => {
 
     return (
         <>
-            <div className="navbar bg-base-100 rounded-3xl z-50">
+            <div className="navbar bg-base-100 rounded-3xl z-50 lg:flex sticky">
                 <div className="navbar-start">
                     {
                         showDrawerButton ? (
