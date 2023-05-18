@@ -1,7 +1,7 @@
 // import img from '../../public/logo.svg'
 const Footer = () => {
     return (
-        <footer className="footer items-center p-4 bg-base-100 text-base-content ">
+        <footer className="footer items-center p-4 bg-base-100">
             <div className="items-center grid-flow-col">
                 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" fill="currentColor" className="w-8 h-8"
                     viewBox="0 0 408.5 406.2" xmlSpace="preserve" >
