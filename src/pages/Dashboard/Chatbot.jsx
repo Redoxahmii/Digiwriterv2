@@ -14,7 +14,7 @@ const Chatbot = () => {
             setMessage('');
         };
         const temperature = '0.9';
-        const max_tokens = '200';
+        const max_tokens = '1500';
         const presence_penalty = '0.6';
         const frequency_penalty = '0.0';
         const top_p = '1';
