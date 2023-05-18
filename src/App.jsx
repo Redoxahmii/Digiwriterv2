@@ -20,6 +20,7 @@ import InstagramCaption from './pages/Dashboard/InstagramCaption'
 import Tweeter from './pages/Dashboard/Tweeter'
 import Summarizer from './pages/Dashboard/Summarizer'
 import ContentRewriter from './pages/Dashboard/ContentRewriter'
+import TitleGenerator from './pages/Dashboard/TitleGenerator'
 // eslint-disable-next-line react/prop-types
 const App = () => {
   const { user } = useContext(AuthContext)
@@ -46,6 +47,7 @@ const App = () => {
           <Route path='tweeter' element={<Tweeter />}></Route>
           <Route path='Summarizer' element={<Summarizer />}></Route>
           <Route path='ContentRewriter' element={<ContentRewriter />}></Route>
+          <Route path='TitleGenerator' element={<TitleGenerator />}></Route>
         </Route>
       </Routes>
     </div>

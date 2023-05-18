@@ -1,9 +1,8 @@
 import { useState } from "react"
-import { RiseLoader } from "react-spinners"
 import Openai from "../../utills/Openai"
-const ProductDesciption = () => {
+import { RiseLoader } from "react-spinners"
+const TitleGenerator = () => {
     const [Product, setProduct] = useState('')
-    const [Context, setContext] = useState('')
     const [aiResponse, setAiResponse] = useState('')
     const [loading, setLoading] = useState(false)
     const [error, setError] = useState('')
@@ -26,20 +25,9 @@ const ProductDesciption = () => {
             setError('Product is required');
             return;
         }
-        if (!Context) {
-            setError('Context is required');
-            return;
-        }
         setLoading(true)
         setAiResponse('')
-        // const prompt = `"product Description for a Product called ${Product} that specializes  in ${Context}"`
-        const prompt = `"Please ignore all previous instructions. I want you to act as a very proficient SEO and high-end eCommerce copy writer that speaks and writes fluently English. Write a 300 word product description in English based on the product details I give you. Also follow these guidelines:
-        - Focus on benefits rather than features
-        - Avoid sentences over 20 words
-        - Avoid using passive voice
-        - Include a call to action at the end 
-        
-        Here are the product details: This is the name of the product "${Product}" and it specializes in this "${Context}""`
+        const prompt = `"Please ignore all previous instructions. I want you to respond only in language English.  I want you to act as a blog post title writer that speaks and writes fluent English. I will type a title, or keywords via comma and you will reply with blog post titles in English. They should all have a hook and high potential to go viral on social media. Write all in English. my first keywords are ${Product}"`
         const temperatureString = temperature.toFixed(2);
         const max_tokens = '500'
         const top_p = '1'
@@ -52,13 +40,9 @@ const ProductDesciption = () => {
                     <div className="">
                         <div className="form-control w-full max-w-xs gap-2">
                             <label className="label">
-                                <span className="label-text font-semibold">Product Name</span>
+                                <span className="label-text font-semibold">Title Generator</span>
                             </label>
-                            <input type="text" placeholder="ie. DaftPunks" value={Product} onChange={(e) => setProduct(e.target.value)} className="input input-primary  input-bordered w-full max-w-xs" />
-                            <label className="label">
-                                <span className="label-text font-semibold">Context</span>
-                            </label>
-                            <input type="text" placeholder="ie. Razor Blades" value={Context} onChange={(e) => setContext(e.target.value)} className="input input-primary  input-bordered w-full max-w-xs" />
+                            <textarea name="AI Response" placeholder="Provide Keywords here" className="border border-primary textarea w-full h-full" cols="40" rows="1" onChange={(e) => setProduct(e.target.value)}></textarea>
                             <label className="label">
                                 <span className="label-text font-semibold">Creativity</span>
                             </label>
@@ -104,4 +88,4 @@ const ProductDesciption = () => {
     )
 }
 
-export default ProductDesciption
+export default TitleGenerator
