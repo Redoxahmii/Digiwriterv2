@@ -48,7 +48,7 @@ const Navbar = () => {
                 <div className="navbar-center">
 
                     <button onClick={() => navigate('/')} className="btn btn-ghost normal-case text-xl gap-2">
-                        <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" fill="currentColor" className="w-7 h-7"
+                        <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" fill="currentColor" className="w-7 h-7 hidden lg:block"
                             viewBox="0 0 408.5 406.2" xmlSpace="preserve" >
                             <g >
                                 <path fill='' d="M163.5,74.6c0-22.2,18.1-40.3,40.3-40.3c22.2,0,40.3,18.1,40.3,40.3V79L266,64.6l0-1.2c-5.4-30.1-31.6-51.9-62.2-51.9
