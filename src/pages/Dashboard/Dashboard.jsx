@@ -66,9 +66,21 @@ const Dashboard = () => {
                             </Link>
                         </li>
                         <li>
+                            <Link to="/dashboard/HeaderOutline">
+                                <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" viewBox="0 0 24 24"><path fill="currentColor" d="M3 4h2v6h4V4h2v14H9v-6H5v6H3V4m11 14v-2h2V6.31l-2.5 1.44V5.44L16 4h2v12h2v2h-6Z" /></svg>
+                                Header Outline Generator
+                            </Link>
+                        </li>
+                        <li>
                             <Link to="/dashboard/TitleGenerator">
                                 <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" viewBox="0 0 24 24"><path fill="currentColor" d="M5 4v3h5.5v12h3V7H19V4z" /></svg>
                                 Title Generator
+                            </Link>
+                        </li>
+                        <li>
+                            <Link to="/dashboard/KeywordGenerator">
+                                <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" viewBox="0 0 16 16"><path fill="currentColor" d="M15 4h-5V3h5v1zm-1 3h-2v1h2V7zm-4 0H1v1h9V7zm2 6H1v1h11v-1zm-5-3H1v1h6v-1zm8 0h-5v1h5v-1zM8 2v3H1V2h7zM7 3H2v1h5V3z" /></svg>
+                                Keyword Generator
                             </Link>
                         </li>
                         <li>
