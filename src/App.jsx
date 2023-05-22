@@ -23,6 +23,8 @@ import ContentRewriter from './pages/Dashboard/ContentRewriter'
 import TitleGenerator from './pages/Dashboard/TitleGenerator'
 import KeywordGenerator from './pages/Dashboard/KeywordGenerator'
 import HeaderOutline from './pages/Dashboard/HeaderOutline'
+import UpworkCover from './pages/Dashboard/UpworkCover'
+import Fivergigdes from './pages/Dashboard/Fivergigdes'
 // eslint-disable-next-line react/prop-types
 const App = () => {
   const { user } = useContext(AuthContext)
@@ -52,6 +54,8 @@ const App = () => {
           <Route path='TitleGenerator' element={<TitleGenerator />}></Route>
           <Route path='KeywordGenerator' element={<KeywordGenerator />}></Route>
           <Route path='HeaderOutline' element={<HeaderOutline />}></Route>
+          <Route path='UpworkCover' element={<UpworkCover />}></Route>
+          <Route path='Fivergigdes' element={<Fivergigdes />}></Route>
         </Route>
       </Routes>
     </div>
