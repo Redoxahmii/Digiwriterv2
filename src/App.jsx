@@ -25,6 +25,7 @@ import KeywordGenerator from './pages/Dashboard/KeywordGenerator'
 import HeaderOutline from './pages/Dashboard/HeaderOutline'
 import UpworkCover from './pages/Dashboard/UpworkCover'
 import Fivergigdes from './pages/Dashboard/Fivergigdes'
+import LinkedinPost from './pages/Dashboard/LinkedinPost'
 // eslint-disable-next-line react/prop-types
 const App = () => {
   const { user } = useContext(AuthContext)
@@ -56,6 +57,7 @@ const App = () => {
           <Route path='HeaderOutline' element={<HeaderOutline />}></Route>
           <Route path='UpworkCover' element={<UpworkCover />}></Route>
           <Route path='Fivergigdes' element={<Fivergigdes />}></Route>
+          <Route path='LinkedinPost' element={<LinkedinPost />}></Route>
         </Route>
       </Routes>
     </div>
