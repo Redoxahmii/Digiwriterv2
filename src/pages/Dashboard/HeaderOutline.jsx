@@ -40,7 +40,7 @@ const HeaderOutline = () => {
                     <div className="">
                         <div className="form-control w-full max-w-xs gap-2">
                             <label className="label">
-                                <span className="label-text font-semibold">Header Outline Generator</span>
+                                <span className="label-text font-semibold">Heading Outline Generator</span>
                             </label>
                             <textarea name="AI Response" placeholder="Provide topic here..." className="border border-primary textarea w-full h-20 resize-none" cols="40" rows="1" onChange={(e) => setProduct(e.target.value)}></textarea>
                             <label className="label">

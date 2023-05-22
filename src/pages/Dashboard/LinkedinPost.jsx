@@ -1,7 +1,7 @@
 import { RiseLoader } from "react-spinners"
 import Openai from "../../utills/Openai"
 import { useState } from "react"
-import me from '../../../public/me.jpg'
+import me from '/me.jpg'
 const LinkedinPost = () => {
   const [Product, setProduct] = useState('')
   const [aiResponse, setAiResponse] = useState('')

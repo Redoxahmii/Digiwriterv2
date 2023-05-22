@@ -66,9 +66,15 @@ const Dashboard = () => {
                             </Link>
                         </li>
                         <li>
+                            <Link to="/dashboard/ResourceFinder">
+                                <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" strokeWidth="2" d="m12 3l9 4.5l-9 4.5l-9-4.5L12 3Zm4.5 7.25L21 12.5L12 17l-9-4.5l4.5-2.25m9 5L21 17.5L12 22l-9-4.5l4.5-2.25" /></svg>
+                                Resource Finder
+                            </Link>
+                        </li>
+                        <li>
                             <Link to="/dashboard/HeaderOutline">
                                 <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" viewBox="0 0 24 24"><path fill="currentColor" d="M3 4h2v6h4V4h2v14H9v-6H5v6H3V4m11 14v-2h2V6.31l-2.5 1.44V5.44L16 4h2v12h2v2h-6Z" /></svg>
-                                Header Outline Generator
+                                Heading Outline Generator
                             </Link>
                         </li>
                         <li>
@@ -176,6 +182,7 @@ const Dashboard = () => {
                                 Linkedin Post Generator
                             </Link>
                         </li>
+
 
                     </ul>
                 </div>
