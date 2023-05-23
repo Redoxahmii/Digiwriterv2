@@ -37,7 +37,7 @@ const ImageSearch = () => {
           <label className="label-text font-semibold text-xl">Image Searcher with Prompts</label>
         </div>
         <input className="input input-bordered" type="text" placeholder="Enter your search..." value={search} onChange={(e) => setsearch(e.target.value)} />
-        <button onClick={() => handleSubmit()} className="btn bg-base-100 gap-2 rounded-md">
+        <button onClick={() => handleSubmit()} className="btn gap-2 rounded-md">
           Search
           <svg xmlns="http:/ /www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-5 h-5">
             <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
@@ -55,15 +55,13 @@ const ImageSearch = () => {
         <div className="hero-content flex-col lg:flex-wrap lg:flex-row">
           {
             images.map(image => (
-              <div key={image.id} className="">
-                <div className="card w-96 rounded-xl bg-base-100 shadow-xl">
-                  <figure>
-                    <img src={image.src} alt="" />
-                  </figure>
-                  <div className="card-body">
-                    <h2 className="card-title text-secondary">Prompt</h2>
-                    <h2 className="text-sm">{image.prompt}</h2>
-                  </div>
+              <div key={image.id} className="card w-96 rounded-xl bg-base-100 shadow-xl">
+                <figure>
+                  <img src={image.src} alt='' />
+                </figure>
+                <div className="card-body">
+                  <h2 className="card-title text-primary-content">Prompt</h2>
+                  <h2 className="text-sm">{image.prompt}</h2>
                 </div>
               </div>
             ))
