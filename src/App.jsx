@@ -27,6 +27,7 @@ import UpworkCover from './pages/Dashboard/UpworkCover'
 import Fivergigdes from './pages/Dashboard/Fivergigdes'
 import LinkedinPost from './pages/Dashboard/LinkedinPost'
 import ResourceFinder from './pages/Dashboard/ResourceFinder'
+import ImageSearch from './pages/Dashboard/ImageSearch'
 // eslint-disable-next-line react/prop-types
 const App = () => {
   const { user } = useContext(AuthContext)
@@ -60,6 +61,7 @@ const App = () => {
           <Route path='Fivergigdes' element={<Fivergigdes />}></Route>
           <Route path='LinkedinPost' element={<LinkedinPost />}></Route>
           <Route path='ResourceFinder' element={<ResourceFinder />}></Route>
+          <Route path='ImageSearch' element={<ImageSearch />}></Route>
         </Route>
       </Routes>
     </div>
