@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
@@ -13,10 +14,12 @@ export default {
     themes: [
       "valentine",
       "business",
-      "aqua",
-      "dark",
-      "forest",
+      "cupcake",
       {
+        business: {
+          ...require("daisyui/src/colors/themes")["[data-theme=business]"],
+          primary: "#09A091",
+        },
         skin: {
           primary: "#93628f",
           secondary: "#f3decd",

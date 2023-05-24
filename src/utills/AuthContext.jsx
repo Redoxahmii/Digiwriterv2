@@ -22,7 +22,7 @@ export const AuthProvider = ({ children }) => {
     }
   }, [theme])
   const toggleTheme = () => {
-    setTheme(theme === 'business' ? 'lighter' : 'business')
+    setTheme(theme === 'business' ? 'cupcake' : 'business')
   }
   const signup = (email, password) => {
     return auth.createUserWithEmailAndPassword(email, password);

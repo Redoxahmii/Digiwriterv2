@@ -73,7 +73,9 @@ const Navbar = () => {
                                 <circle fill='' cx="114.4" cy="359.7" r="15.9" />
                             </g>
                         </svg>
-                        Digiwriter
+                        <p>
+                            Digiwriter
+                        </p>
                     </button>
                 </div>
                 <div className="navbar-end">
@@ -129,7 +131,6 @@ const Navbar = () => {
                     </div>
                 </div>
             </div>
-            {/* <Signup closeModal={() => setShowModal(false)} /> */}
 
         </>
     )

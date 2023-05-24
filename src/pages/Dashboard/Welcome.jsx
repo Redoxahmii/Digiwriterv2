@@ -131,7 +131,7 @@ const subpages = [
         title: "Resource Finder",
         description: "Resources for learning!",
         image: <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" strokeWidth="2" d="m12 3l9 4.5l-9 4.5l-9-4.5L12 3Zm4.5 7.25L21 12.5L12 17l-9-4.5l4.5-2.25m9 5L21 17.5L12 22l-9-4.5l4.5-2.25" /></svg>,
-        path: "/dashboard/LinkedinPost"
+        path: "/dashboard/ResourceFinder"
     },
 
     // add more subpages here
@@ -144,9 +144,9 @@ const Welcome = () => {
         <div className="hero lg:place-items-start min-h-screen bg-base-200">
             <div className="hero-content flex-col lg:flex-wrap lg:flex-row">
                 {subpages.map((subpage) => (
-                    <div key={subpage.path} className="card bg-base-100 mt-10 rounded-2xl shadow-xl">
+                    <div key={subpage.path} className=" hover:bg-primary hover:transition-all group transition-all shadow-xl card bg-base-100 mt-10 rounded-2xl">
                         <div className="card-body items-center text-center">
-                            <figure className="w-36 h-36">
+                            <figure className="w-36 h-36 group-hover:scale-105 transition-all">
                                 {subpage.image}
                             </figure>
                             <h2 className="text-xl font-semibold">{subpage.title}</h2>
