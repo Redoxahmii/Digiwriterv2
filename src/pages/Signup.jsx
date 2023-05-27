@@ -1,9 +1,10 @@
 import { createUserWithEmailAndPassword, sendEmailVerification, updateProfile } from "firebase/auth";
 import { Fade } from "react-awesome-reveal"
 import { Link, useNavigate } from "react-router-dom"
-import { auth } from "../utills/firebase";
+import { auth, db } from "../utills/firebase";
 import { useContext, useState } from "react";
 import { AuthContext } from "../utills/AuthContext";
+import { doc, setDoc } from "firebase/firestore";
 const Signup = () => {
     const { logout, setShowModal } = useContext(AuthContext)
     const navigate = useNavigate();
@@ -12,6 +13,21 @@ const Signup = () => {
     const [password, setPassword] = useState('')
     const [errorMsg, seterrorMsg] = useState("");
     const [submitButtonDisabled, setsubmitButtonDisabled] = useState(false);
+    const CreateUserDocument = async (user) => {
+        try {
+            const uid = user.uid;
+            await setDoc(doc(db, "users", uid), {
+                uid: uid,
+                name: user.displayName,
+                email: user.email,
+                openai: "",
+                createdAt: Date.now()
+            });
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
     const handleSubmission = () => {
         if (!name || !email || !password) {
             seterrorMsg("Fill All Fields");
@@ -22,11 +38,21 @@ const Signup = () => {
         createUserWithEmailAndPassword(auth, email, password).then(async (res) => {
             setShowModal(false)
             setsubmitButtonDisabled(false);
+            // console.log(res.user)
             const user = res.user;
             await sendEmailVerification(res.user);
             await updateProfile(user, {
                 displayName: name,
             });
+            await CreateUserDocument(user)
+            // const ref = await addDoc(collection(db, "users"), {
+            //     uid: user.uid,
+            //     name: name,
+            //     email: email,
+            //     openai: "",
+            //     createdAt: Date.now()
+            // })
+            // console.log(ref)
             logout();
             seterrorMsg("Verification Email Sent");
             setTimeout(() => {

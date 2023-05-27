@@ -3,7 +3,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../utills/AuthContext';
 import { DrawerButton } from '../pages/Dashboard/Dashboard';
 const Navbar = () => {
-    const { currentUser, logout, user, toggleTheme, showModal, setShowModal } = useContext(AuthContext)
+    const { currentUser, logout, user, toggleTheme, showModal, setShowModal, updateEntry, setKey } = useContext(AuthContext)
     const navigate = useNavigate()
     const location = useLocation();
     const showDrawerButton = location.pathname.startsWith('/dashboard');
@@ -21,7 +21,6 @@ const Navbar = () => {
             setShowModal(true)
         }
     }
-
     return (
         <>
             <div className="navbar bg-base-100 rounded-3xl z-50 lg:flex sticky">
@@ -119,6 +118,9 @@ const Navbar = () => {
                                         <div className='flex justify-center items-center flex-col'>
                                             <p className="pt-4 font-semibold">Name:&nbsp; <span className='font-normal text-primary-content'>{currentUser.displayName}</span> </p>
                                             <p className="py-4 font-semibold">Email:&nbsp; <span className='font-normal text-primary-content'>{currentUser.email} </span> </p>
+                                            {/* <p className="py-4 font-semibold flex">Openai Key:&nbsp; <span className='font-normal text-primary-content'></span> </p>
+                                            <input type="text" onChange={(e) => setKey(e.target.value)} className='input input-primary' />
+                                            <button className='btn' onClick={() => updateEntry(currentUser.uid)}> Submit</button> */}
                                             <div className='flex flex-row gap-4'>
                                                 <button onClick={() => logout()} className='btn rounded-xl'>Logout</button>
                                                 <button onClick={() => navigate('/dashboard/welcome')} className='btn rounded-xl'>Dashboard</button>

@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import { createContext, useState, useEffect } from 'react';
-import { auth } from '../utills/firebase';
-
+import { auth, db } from '../utills/firebase';
+import { doc, getDoc, setDoc } from 'firebase/firestore';
 export const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
@@ -10,6 +10,7 @@ export const AuthProvider = ({ children }) => {
   const [loading, setLoading] = useState(true);
   const [user, setuser] = useState(false);
   const [showModal, setShowModal] = useState(false)
+  const [Key, setKey] = useState('');
 
 
   const [theme, setTheme] = useState(localStorage.getItem('theme') || 'business');
@@ -32,6 +33,8 @@ export const AuthProvider = ({ children }) => {
     return auth.signInWithEmailAndPassword(email, password);
   };
 
+
+
   const logout = () => {
     return auth.signOut();
   };
@@ -47,6 +50,43 @@ export const AuthProvider = ({ children }) => {
   const updatePassword = (password) => {
     return currentUser.updatePassword(password);
   };
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  const CheckDocumentExists = async (uid) => {
+    try {
+
+      const docRef = doc(db, "users", uid)
+      const docSnap = await getDoc(docRef)
+      console.log(docSnap)
+      if (docSnap.exists()) {
+        console.log('Document data:');
+      } else {
+        console.log('No such document!');
+      }
+    } catch (error) {
+      console.log("Error getting document:", error);
+    }
+  }
+
+  const updateEntry = async (uid) => {
+    try {
+      const docRef = doc(db, "users", uid)
+      await setDoc(docRef, {
+        openai: Key,
+      }, { merge: true })
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
+  useEffect(() => {
+    const first = async () => {
+      if (currentUser && currentUser.uid) {
+        await CheckDocumentExists(currentUser.uid)
+      }
+    }
+    first()
+  }, [currentUser, CheckDocumentExists])
+
 
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((user) => {
@@ -54,7 +94,7 @@ export const AuthProvider = ({ children }) => {
       setLoading(false);
     });
     return unsubscribe;
-  }, []);
+  },);
 
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((user) => {
@@ -81,6 +121,9 @@ export const AuthProvider = ({ children }) => {
     toggleTheme,
     showModal,
     setShowModal,
+    updateEntry,
+    Key,
+    setKey
   };
 
   return (
