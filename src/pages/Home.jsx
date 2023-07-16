@@ -1,10 +1,11 @@
-import Hero from "../components/Hero"
+import Hero from "../components/Hero";
 const Home = () => {
-    return (
-        <>
-            <Hero />
-        </>
-    )
-}
+  console.log(import.meta.env.VITE_OPENAI_KEY);
+  return (
+    <>
+      <Hero />
+    </>
+  );
+};
 
-export default Home
+export default Home;
